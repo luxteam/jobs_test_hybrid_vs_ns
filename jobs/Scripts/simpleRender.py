@@ -12,10 +12,12 @@ from queue import Queue
 from subprocess import PIPE, Popen
 from threading import Thread
 import copy
+import traceback
+import time
 
 sys.path.append(os.path.abspath(os.path.join(
     os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
-import jobs_launcher.core.config as core_config
+from jobs_launcher.core.config import *
 from jobs_launcher.core.system_info import get_gpu
 
 
@@ -43,31 +45,31 @@ def copy_test_cases(args):
         # create two cases: one for HybridPro, one for Northstar64
         duplicated_cases = []
         for case in cases:
-            for plugin in ["HybridPro", "Northstar64"]
+            for plugin in ["HybridPro", "Northstar64"]:
                 copied_case = copy.deepcopy(case)
+                copied_case["case"] = "{}_{}".format(copied_case["case"], plugin)
                 copied_case["plugin"] = plugin
                 duplicated_cases.append(copied_case)
 
         with open(os.path.join(args.output, 'test_cases.json'), "w+") as file:
             json.dump(duplicated_cases, file, indent=4)
     except Exception as e:
-        core_config.logging.error('Can\'t load test_cases.json')
-        core_config.main_logger.error(str(e))
-        group_failed(args)
+        main_logger.error('Can\'t load test_cases.json')
+        main_logger.error(str(e))
         exit(-1)
 
 
 def prepare_empty_reports(args, current_conf):
     main_logger.info('Create empty report files')
 
-    copyfile(os.path.abspath(os.path.join(args.output, '..', '..', '..', '..', 'jobs_launcher',
-                                          'common', 'img', 'error.jpg')), os.path.join(args.output, 'Color', 'failed.jpg'))
+    #copyfile(os.path.abspath(os.path.join(args.output, '..', '..', '..', '..', 'jobs_launcher',
+    #                                      'common', 'img', 'error.jpg')), os.path.join(args.output, 'Color', 'failed.jpg'))
 
     with open(os.path.join(os.path.abspath(args.output), "test_cases.json"), "r") as json_file:
         cases = json.load(json_file)
 
     for case in cases:
-        if utils.is_case_skipped(case, current_conf):
+        if is_case_skipped(case, current_conf):
             case['status'] = 'skipped'
 
         if case['status'] != 'done' and case['status'] != 'error':
@@ -81,6 +83,7 @@ def prepare_empty_reports(args, current_conf):
             test_case_report['geometry'] = case['geometry']
             test_case_report['material_file'] = case['material_file']
             test_case_report['material_path'] = case['material_path']
+            test_case_report['plugin'] = case['plugin']
             test_case_report['iterations'] = int(case.get('iterations', 10))
             test_case_report['test_group'] = args.test_group
             test_case_report['date_time'] = datetime.now().strftime(
@@ -113,7 +116,6 @@ def prepare_empty_reports(args, current_conf):
             with open(case_path, "w") as f:
                 f.write(json.dumps([test_case_report], indent=4))
 
-        copy_baselines(args, case, baseline_path, baseline_path_tr)
     with open(os.path.join(args.output, "test_cases.json"), "w+") as f:
         json.dump(cases, f, indent=4)
 
@@ -131,7 +133,7 @@ def save_results(args, case, cases, test_case_status, render_time, error_message
         test_case_report["file_name"] = case["case"] + case.get("extension", '.jpg')
         test_case_report["test_status"] = test_case_status
         test_case_report["render_time"] = render_time
-        test_case_report["render_log"] = os.path.join("render_tool_logs", test["case"] + ".log")
+        test_case_report["render_log"] = os.path.join("render_tool_logs", case["case"] + ".log")
         test_case_report["testing_start"] = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
         test_case_report["number_of_tries"] += 1
 
@@ -157,7 +159,7 @@ def execute_tests(args, current_conf):
     with open(os.path.join(os.path.abspath(args.output), "test_cases.json"), "r") as json_file:
         cases = json.load(json_file)
 
-    for case in [x for x in cases if not utils.is_case_skipped(x, current_conf)]:
+    for case in [x for x in cases if not is_case_skipped(x, current_conf)]:
 
         current_try = 0
 
@@ -165,14 +167,15 @@ def execute_tests(args, current_conf):
 
         while current_try < args.retries:
             try:
-                execution_script = """{tool} --plugin {plugin} --geometry {geometry} --material {material} 
-                --path {path} --iterations {iterations} --output {output}"""
+                execution_script = "{tool} --plugin {plugin} --geometry {geometry} --material {material} --path {path} --output {output}"
 
                 execution_script = execution_script.format(tool=args.tool, plugin=case["plugin"], 
-                    geometry=case["geometry"], material=case["material_file"], path=case["material_path"], 
-                    iterations=case["iterations"], output=case["case"] + case.get("extension", ".jpg"))
+                    geometry=os.path.abspath(os.path.join(args.res_path, case["geometry"])), 
+                    material=case["material_file"], 
+                    path=os.path.abspath(os.path.join(args.res_path, case["material_path"])), 
+                    output=os.path.abspath(os.path.join(args.output, case["case"] + case.get("extension", ".jpg"))))
 
-                execution_script_path = os.path.join(args.output, "{}.bat".format(case_name))
+                execution_script_path = os.path.join(args.output, "{}.bat".format(case["case"]))
        
                 with open(execution_script_path, "w") as f:
                     f.write(execution_script)
@@ -198,24 +201,28 @@ def execute_tests(args, current_conf):
                 try:
                     p.wait(timeout=args.timeout)
 
+                    for out in outs:
+                        if "error code" in out:
+                            raise Exception("Tool returned error code")
+
                     status = "passed"
 
                     render_time = time.time() - start_time
 
                     save_results(args, case, cases, "passed", render_time)
                 except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
-                    core_config.main_logger.error("Test case {} has been aborted by timeout".format(case["case"]))
+                    main_logger.error("Test case {} has been aborted by timeout".format(case["case"]))
                     for child in reversed(p.children(recursive=True)):
                         child.terminate()
                     p.terminate()
                 finally:
-                    with open(os.path.join(args.output, json_name), "w") as f:
-                        json.dump(report, f, indent=4)
+                    log_path = os.path.join(args.output, "render_tool_logs", case["case"] + ".log")
 
                     outs = " ".join(outs)
                     errs = " ".join(errs)
 
-                    with open(log_path, "w", encoding="utf-8") as file:
+                    with open(log_path, "a", encoding="utf-8") as file:
+                        file.write("---------- Try #{} ----------".format(current_try))
                         file.write(outs)
                         file.write(errs)
 
@@ -223,10 +230,12 @@ def execute_tests(args, current_conf):
             except Exception as e:
                 save_results(args, case, cases, "failed", -0.0, error_messages = error_messages)
                 error_messages.add(str(e))
-                utils.case_logger.error("Failed to execute test case (try #{}): {}".format(current_try, str(e)))
-                utils.case_logger.error("Traceback: {}".format(traceback.format_exc()))
+                main_logger.error("Failed to execute test case (try #{}): {}".format(current_try, str(e)))
+                main_logger.error("Traceback: {}".format(traceback.format_exc()))
+            finally:
+                current_try += 1
         else:
-            utils.case_logger.error("Failed to execute case '{}' at all".format(case["case"]))
+            main_logger.error("Failed to execute case '{}' at all".format(case["case"]))
             rc = -1
             save_results(args, case, cases, "error", -0.0, error_messages = error_messages)
 
@@ -242,14 +251,13 @@ def createArgsParser():
     parser.add_argument("--res_path", required=True)
     parser.add_argument("--test_cases", required=True)
     parser.add_argument("--retries", required=False, default=2, type=int)
-    parser.add_argument("--update_refs", required=True)
-    parser.add_argument('--timeout', required=False, default=300)
+    parser.add_argument('--timeout', required=False, default=120)
 
     return parser
 
 
 if __name__ == '__main__':
-    core_config.main_logger.info('simpleRender start working...')
+    main_logger.info('simpleRender start working...')
 
     args = createArgsParser().parse_args()
 

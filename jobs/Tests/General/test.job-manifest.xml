@@ -6,12 +6,10 @@
     <execute command='python "{ResourcesDir}/simpleRender.py"'>
         <argument>--tool "{Tool}"</argument>
         <argument>--output "{OutputDir}"</argument>
-        <argument>--test_group Viewport</argument>
-        <argument>--res_path "{ScenesDir}"/Smoke</argument>
+        <argument>--test_group General</argument>
+        <argument>--res_path "{ScenesDir}"</argument>
         <argument>--test_cases "{TestCases}"</argument>
         <argument>--retries {retries}</argument>
-        <argument>--update_refs "{UpdateRefs}"</argument>
-        <argument>--tool_name "{ToolName}"</argument>
     </execute>
 
     <execute command='python "{CommonDir}/scripts/makeReport.py"'>
@@ -21,7 +19,7 @@
     <execute command='python "{CommonDir}/scripts/compareByJSON.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
-        <argument>--update_refs "{UpdateRefs}"</argument>
+        <argument>--update_refs "No"</argument>
     </execute>
 
 </job-manifest>
