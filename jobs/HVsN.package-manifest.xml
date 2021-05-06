@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<package-manifest name="Blender">
+
+    <variable name="Root" value="{CWD}"/>
+    <variable name="ResourcesDir" value = "{CWD}/Scripts"/>
+    <variable name="ScenesDir" value="{ResPath}"/>
+    <variable name="CommonDir" value="{CWD}/../jobs_launcher/common"/>
+
+</package-manifest>

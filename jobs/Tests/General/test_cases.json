@@ -1,0 +1,13 @@
+[
+    {
+        "case": "HVSN_GEN_001",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Gold"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_gold.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+]
