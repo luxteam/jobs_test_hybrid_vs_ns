@@ -75,6 +75,7 @@ def prepare_empty_reports(args, current_conf):
             test_case_report['material_file'] = case['material_file']
             test_case_report['material_path'] = case['material_path']
             test_case_report['plugin'] = args.plugin
+            test_case_report['render_engine'] = args.plugin
             test_case_report['iterations'] = int(case.get('iterations', 10))
             test_case_report['test_group'] = args.test_group
             test_case_report['tool'] = 'HybridVsNs'
