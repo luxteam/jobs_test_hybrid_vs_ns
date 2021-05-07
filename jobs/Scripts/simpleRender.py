@@ -70,6 +70,7 @@ def prepare_empty_reports(args, current_conf):
             test_case_report = RENDER_REPORT_BASE.copy()
             test_case_report['test_case'] = case['case']
             test_case_report['render_device'] = get_gpu()
+            test_case_report['render_duration'] = -0.0
             test_case_report['script_info'] = case['script_info']
             test_case_report['geometry'] = case['geometry']
             test_case_report['material_file'] = case['material_file']
