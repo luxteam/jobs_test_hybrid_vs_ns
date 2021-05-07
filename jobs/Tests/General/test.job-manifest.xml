@@ -13,4 +13,8 @@
         <argument>--plugin {plugin}</argument>
     </execute>
 
+    <execute command='python "{ResourcesDir}/makeCompareReport.py"'>
+        <argument>--work_dir "{OutputDir}"</argument>
+    </execute>
+
 </job-manifest>
