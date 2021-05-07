@@ -42,17 +42,8 @@ def copy_test_cases(args):
                         item for item in cases if item['case'] in test_cases]
                     cases = necessary_cases
 
-        # create two cases: one for HybridPro, one for Northstar64
-        duplicated_cases = []
-        for case in cases:
-            for plugin in ["HybridPro", "Northstar64"]:
-                copied_case = copy.deepcopy(case)
-                copied_case["case"] = "{}_{}".format(copied_case["case"], plugin)
-                copied_case["plugin"] = plugin
-                duplicated_cases.append(copied_case)
-
-        with open(os.path.join(args.output, 'test_cases.json'), "w+") as file:
-            json.dump(duplicated_cases, file, indent=4)
+            with open(os.path.join(args.output, 'test_cases.json'), "w+") as file:
+                json.dump(duplicated_cases, file, indent=4)
     except Exception as e:
         main_logger.error('Can\'t load test_cases.json')
         main_logger.error(str(e))
@@ -62,8 +53,8 @@ def copy_test_cases(args):
 def prepare_empty_reports(args, current_conf):
     main_logger.info('Create empty report files')
 
-    #copyfile(os.path.abspath(os.path.join(args.output, '..', '..', '..', '..', 'jobs_launcher',
-    #                                      'common', 'img', 'error.jpg')), os.path.join(args.output, 'Color', 'failed.jpg'))
+    copyfile(os.path.abspath(os.path.join(args.output, '..', '..', '..', '..', 'jobs_launcher',
+                                          'common', 'img', 'error.jpg')), os.path.join(args.output, 'Color', 'failed.jpg'))
 
     with open(os.path.join(os.path.abspath(args.output), "test_cases.json"), "r") as json_file:
         cases = json.load(json_file)
@@ -83,7 +74,7 @@ def prepare_empty_reports(args, current_conf):
             test_case_report['geometry'] = case['geometry']
             test_case_report['material_file'] = case['material_file']
             test_case_report['material_path'] = case['material_path']
-            test_case_report['plugin'] = case['plugin']
+            test_case_report['plugin'] = args.plugin
             test_case_report['iterations'] = int(case.get('iterations', 10))
             test_case_report['test_group'] = args.test_group
             test_case_report['date_time'] = datetime.now().strftime(
@@ -169,11 +160,13 @@ def execute_tests(args, current_conf):
             try:
                 execution_script = "{tool} --plugin {plugin} --geometry {geometry} --material {material} --path {path} --output {output}"
 
-                execution_script = execution_script.format(tool=args.tool, plugin=case["plugin"], 
+                image_output_path = os.path.abspath(os.path.join(args.output, "Color", case["case"] + case.get("extension", ".jpg")))
+
+                execution_script = execution_script.format(tool=args.tool, plugin=args.plugin, 
                     geometry=os.path.abspath(os.path.join(args.res_path, case["geometry"])), 
                     material=case["material_file"], 
                     path=os.path.abspath(os.path.join(args.res_path, case["material_path"])), 
-                    output=os.path.abspath(os.path.join(args.output, case["case"] + case.get("extension", ".jpg"))))
+                    output=image_output_path)
 
                 execution_script_path = os.path.join(args.output, "{}.bat".format(case["case"]))
        
@@ -252,6 +245,7 @@ def createArgsParser():
     parser.add_argument("--test_cases", required=True)
     parser.add_argument("--retries", required=False, default=2, type=int)
     parser.add_argument('--timeout', required=False, default=120)
+    parser.add_argument('--plugin', required=True)
 
     return parser
 
@@ -264,6 +258,8 @@ if __name__ == '__main__':
     try:
         os.makedirs(args.output)
 
+        if not os.path.exists(os.path.join(args.output, "Color")):
+            os.makedirs(os.path.join(args.output, "Color"))
         if not os.path.exists(os.path.join(args.output, "render_tool_logs")):
             os.makedirs(os.path.join(args.output, "render_tool_logs"))
 

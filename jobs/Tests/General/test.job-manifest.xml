@@ -10,16 +10,7 @@
         <argument>--res_path "{ScenesDir}"</argument>
         <argument>--test_cases "{TestCases}"</argument>
         <argument>--retries {retries}</argument>
-    </execute>
-
-    <execute command='python "{CommonDir}/scripts/makeReport.py"'>
-        <argument>--work_dir "{OutputDir}"</argument>
-    </execute>
-
-    <execute command='python "{CommonDir}/scripts/compareByJSON.py"'>
-        <argument>--work_dir "{OutputDir}"</argument>
-        <argument>--base_dir "{BaselineDir}"</argument>
-        <argument>--update_refs "No"</argument>
+        <argument>--plugin {plugin}</argument>
     </execute>
 
 </job-manifest>
