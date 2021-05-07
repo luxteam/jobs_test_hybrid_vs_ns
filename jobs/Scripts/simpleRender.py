@@ -77,6 +77,7 @@ def prepare_empty_reports(args, current_conf):
             test_case_report['plugin'] = args.plugin
             test_case_report['iterations'] = int(case.get('iterations', 10))
             test_case_report['test_group'] = args.test_group
+            test_case_report['tool'] = 'HybridVsNs'
             test_case_report['date_time'] = datetime.now().strftime(
                 '%m/%d/%Y %H:%M:%S')
             if case['status'] == 'skipped':
@@ -122,15 +123,16 @@ def save_results(args, case, cases, test_case_status, render_time, error_message
     with open(os.path.join(args.output, case["case"] + CASE_REPORT_SUFFIX), "r") as file:
         test_case_report = json.loads(file.read())[0]
         test_case_report["file_name"] = case["case"] + case.get("extension", '.jpg')
+        test_case_report["render_color_path"] = os.path.join("Color", test_case_report["file_name"])
         test_case_report["test_status"] = test_case_status
         test_case_report["render_time"] = render_time
         test_case_report["render_log"] = os.path.join("render_tool_logs", case["case"] + ".log")
         test_case_report["testing_start"] = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
         test_case_report["number_of_tries"] += 1
 
-        if test_case_status == "passed":
-            test_case_report["render_color_path"] = os.path.join("Color", test_case_report["file_name"])
-        else:
+        if test_case_status != "passed":
+            copyfile(os.path.join(args.output, "Color", "failed.jpg"), 
+                os.path.join(args.output, "Color", case["case"] + ".jpg"))
             test_case_report["message"] = list(error_messages)
 
         if test_case_status == "passed" or test_case_status == "error":
