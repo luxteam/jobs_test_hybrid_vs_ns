@@ -4,10 +4,725 @@
         "status": "active",
         "script_info": [
             "Geometry - Shaderball",
+            "Material - Standard Surface Brass"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_brass_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_002",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Carpaint"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_carpaint.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_003",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Chrome"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_chrome.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_004",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Copper"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_copper.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_005",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Default"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_default.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_006",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Glass"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_glass.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_007",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
             "Material - Standard Surface Gold"
         ],
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_gold.mtlx",
         "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_008",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Greysphere"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_greysphere.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_009",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Greysphere Calibration"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_greysphere_calibration.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_010",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Jade"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_jade.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_011",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Look Brass Tiled"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_look_brass_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_012",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Look Wood Tiled"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_look_wood_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_013",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Marble Solid"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_marble_solid.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_014",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Metal Brushed"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_metal_brushed.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_015",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Plastic"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_plastic.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_016",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Thin Film"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_thin_film.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_017",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Velvet"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_velvet.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_018",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Standard Surface Wood Tiled"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"standard_surface_wood_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_019",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Cream Onyx"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"CreamOnyx.mtlx",
+        "material_path": "mtlx/CreamOnyx_4k_8b/"
+    },
+    {
+        "case": "HVSN_GEN_020",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - Carbon biColor Coat"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"Carbon_biColor_Coat.mtlx",
+        "material_path": "mtlx/Carbon_biColor_Coat_4k_8b/"
+    },
+    {
+        "case": "HVSN_GEN_021",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - CarPaint Single Color"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"CarPaint_SingleColor.mtlx",
+        "material_path": "mtlx/CarPaint_SingleColor/"
+    },
+    {
+        "case": "HVSN_GEN_022",
+        "status": "active",
+        "script_info": [
+            "Geometry - Shaderball",
+            "Material - BrickWall Red Weathered"
+        ],
+        "geometry": "geometry/shaderball.obj",
+        "material_file" :"BrickWall_Red_Weathered.mtlx",
+        "material_path": "mtlx/BrickWall_Red_Weathered_4k_8b/"
+    },
+        {
+        "case": "HVSN_GEN_023",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Brass"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_brass_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_024",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Carpaint"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_carpaint.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_025",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Chrome"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_chrome.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_026",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Copper"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_copper.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_027",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Default"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_default.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_028",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Glass"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_glass.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_029",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Gold"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_gold.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_030",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Greysphere"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_greysphere.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_031",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Greysphere Calibration"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_greysphere_calibration.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_032",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Jade"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_jade.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_033",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Look Brass Tiled"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_look_brass_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_034",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Look Wood Tiled"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_look_wood_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_035",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Marble Solid"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_marble_solid.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_036",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Metal Brushed"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_metal_brushed.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_037",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Plastic"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_plastic.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_038",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Thin Film"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_thin_film.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_039",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Velvet"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_velvet.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_040",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Standard Surface Wood Tiled"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"standard_surface_wood_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_041",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Cream Onyx"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"CreamOnyx.mtlx",
+        "material_path": "mtlx/CreamOnyx_4k_8b/"
+    },
+    {
+        "case": "HVSN_GEN_042",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - Carbon biColor Coat"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"Carbon_biColor_Coat.mtlx",
+        "material_path": "mtlx/Carbon_biColor_Coat_4k_8b/"
+    },
+    {
+        "case": "HVSN_GEN_043",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - CarPaint Single Color"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"CarPaint_SingleColor.mtlx",
+        "material_path": "mtlx/CarPaint_SingleColor/"
+    },
+    {
+        "case": "HVSN_GEN_044",
+        "status": "active",
+        "script_info": [
+            "Geometry - Sphere",
+            "Material - BrickWall Red Weathered"
+        ],
+        "geometry": "geometry/sphere.obj",
+        "material_file" :"BrickWall_Red_Weathered.mtlx",
+        "material_path": "mtlx/BrickWall_Red_Weathered_4k_8b/"
+    },
+        {
+        "case": "HVSN_GEN_001",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Brass"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_brass_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_002",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Carpaint"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_carpaint.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_003",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Chrome"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_chrome.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_004",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Copper"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_copper.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_005",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Default"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_default.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_006",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Glass"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_glass.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_007",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Gold"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_gold.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_008",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Greysphere"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_greysphere.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_009",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Greysphere Calibration"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_greysphere_calibration.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_010",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Jade"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_jade.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_011",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Look Brass Tiled"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_look_brass_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_012",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Look Wood Tiled"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_look_wood_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_013",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Marble Solid"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_marble_solid.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_014",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Metal Brushed"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_metal_brushed.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_015",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Plastic"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_plastic.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_016",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Thin Film"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_thin_film.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_017",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Velvet"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_velvet.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_018",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Standard Surface Wood Tiled"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"standard_surface_wood_tiled.mtlx",
+        "material_path": "mtlx/StandardSurface/"
+    },
+    {
+        "case": "HVSN_GEN_019",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Cream Onyx"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"CreamOnyx.mtlx",
+        "material_path": "mtlx/CreamOnyx_4k_8b/"
+    },
+    {
+        "case": "HVSN_GEN_020",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - Carbon biColor Coat"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"Carbon_biColor_Coat.mtlx",
+        "material_path": "mtlx/Carbon_biColor_Coat_4k_8b/"
+    },
+    {
+        "case": "HVSN_GEN_021",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - CarPaint Single Color"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"CarPaint_SingleColor.mtlx",
+        "material_path": "mtlx/CarPaint_SingleColor/"
+    },
+    {
+        "case": "HVSN_GEN_022",
+        "status": "active",
+        "script_info": [
+            "Geometry - Teapot",
+            "Material - BrickWall Red Weathered"
+        ],
+        "geometry": "geometry/teapot.obj",
+        "material_file" :"BrickWall_Red_Weathered.mtlx",
+        "material_path": "mtlx/BrickWall_Red_Weathered_4k_8b/"
     }
 ]
