@@ -171,7 +171,7 @@ def execute_tests(args, current_conf):
                     material=case["material_file"], 
                     path=os.path.abspath(os.path.join(args.res_path, case["material_path"])), 
                     output=image_output_path,
-                    iterations=iterations
+                    iterations=case.get("iterations", 50)
                 )
 
                 execution_script_path = os.path.join(args.output, "{}.bat".format(case["case"]))
