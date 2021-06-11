@@ -77,7 +77,7 @@ def prepare_empty_reports(args, current_conf):
             test_case_report['material_path'] = case['material_path']
             test_case_report['plugin'] = args.plugin
             test_case_report['render_engine'] = args.plugin
-            test_case_report['iterations'] = int(case.get('iterations', 10))
+            test_case_report['iterations'] = int(case.get('iterations', 50))
             test_case_report['test_group'] = args.test_group
             test_case_report['tool'] = 'HybridVsNs'
             test_case_report['date_time'] = datetime.now().strftime(
@@ -162,7 +162,7 @@ def execute_tests(args, current_conf):
 
         while current_try < args.retries:
             try:
-                execution_script = "{tool} --plugin {plugin} --geometry {geometry} --material {material} --path {path} --output {output}"
+                execution_script = "{tool} --plugin {plugin} --geometry {geometry} --material {material} --path {path} --output {output} --iterations {iterations}"
 
                 image_output_path = os.path.abspath(os.path.join(args.output, "Color", case["case"] + case.get("extension", ".jpg")))
 
@@ -170,7 +170,9 @@ def execute_tests(args, current_conf):
                     geometry=os.path.abspath(os.path.join(args.res_path, case["geometry"])), 
                     material=case["material_file"], 
                     path=os.path.abspath(os.path.join(args.res_path, case["material_path"])), 
-                    output=image_output_path)
+                    output=image_output_path,
+                    iterations=case.get("iterations", 50)
+                )
 
                 execution_script_path = os.path.join(args.output, "{}.bat".format(case["case"]))
        

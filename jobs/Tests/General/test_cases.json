@@ -6,6 +6,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Brass"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_brass_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -17,6 +18,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Carpaint"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_carpaint.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -28,6 +30,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Chrome"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_chrome.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -39,6 +42,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Copper"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_copper.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -50,6 +54,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Default"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_default.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -61,6 +66,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Glass"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_glass.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -72,6 +78,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Gold"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_gold.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -83,6 +90,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Greysphere"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_greysphere.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -94,6 +102,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Greysphere Calibration"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_greysphere_calibration.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -105,6 +114,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Jade"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_jade.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -116,6 +126,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Look Brass Tiled"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_look_brass_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -127,6 +138,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Look Wood Tiled"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_look_wood_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -138,6 +150,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Marble Solid"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_marble_solid.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -149,6 +162,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Metal Brushed"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_metal_brushed.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -160,6 +174,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Plastic"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_plastic.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -171,6 +186,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Thin Film"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_thin_film.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -182,6 +198,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Velvet"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_velvet.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -193,6 +210,7 @@
             "Geometry - Shaderball",
             "Material - Standard Surface Wood Tiled"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"standard_surface_wood_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -204,6 +222,7 @@
             "Geometry - Shaderball",
             "Material - Cream Onyx"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"CreamOnyx.mtlx",
         "material_path": "mtlx/CreamOnyx_4k_8b/"
@@ -215,6 +234,7 @@
             "Geometry - Shaderball",
             "Material - Carbon biColor Coat"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"Carbon_biColor_Coat.mtlx",
         "material_path": "mtlx/Carbon_biColor_Coat_4k_8b/"
@@ -226,6 +246,7 @@
             "Geometry - Shaderball",
             "Material - CarPaint Single Color"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"CarPaint_SingleColor.mtlx",
         "material_path": "mtlx/CarPaint_SingleColor/"
@@ -237,6 +258,7 @@
             "Geometry - Shaderball",
             "Material - BrickWall Red Weathered"
         ],
+        "iterations": 50,
         "geometry": "geometry/shaderball.obj",
         "material_file" :"BrickWall_Red_Weathered.mtlx",
         "material_path": "mtlx/BrickWall_Red_Weathered_4k_8b/"
@@ -248,6 +270,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Brass"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_brass_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -259,6 +282,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Carpaint"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_carpaint.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -270,6 +294,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Chrome"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_chrome.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -281,6 +306,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Copper"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_copper.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -292,6 +318,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Default"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_default.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -303,6 +330,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Glass"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_glass.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -314,6 +342,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Gold"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_gold.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -325,6 +354,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Greysphere"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_greysphere.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -336,6 +366,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Greysphere Calibration"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_greysphere_calibration.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -347,6 +378,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Jade"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_jade.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -358,6 +390,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Look Brass Tiled"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_look_brass_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -369,6 +402,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Look Wood Tiled"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_look_wood_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -380,6 +414,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Marble Solid"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_marble_solid.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -391,6 +426,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Metal Brushed"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_metal_brushed.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -402,6 +438,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Plastic"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_plastic.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -413,6 +450,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Thin Film"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_thin_film.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -424,6 +462,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Velvet"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_velvet.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -435,6 +474,7 @@
             "Geometry - Sphere",
             "Material - Standard Surface Wood Tiled"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"standard_surface_wood_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -446,6 +486,7 @@
             "Geometry - Sphere",
             "Material - Cream Onyx"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"CreamOnyx.mtlx",
         "material_path": "mtlx/CreamOnyx_4k_8b/"
@@ -457,6 +498,7 @@
             "Geometry - Sphere",
             "Material - Carbon biColor Coat"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"Carbon_biColor_Coat.mtlx",
         "material_path": "mtlx/Carbon_biColor_Coat_4k_8b/"
@@ -468,6 +510,7 @@
             "Geometry - Sphere",
             "Material - CarPaint Single Color"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"CarPaint_SingleColor.mtlx",
         "material_path": "mtlx/CarPaint_SingleColor/"
@@ -479,6 +522,7 @@
             "Geometry - Sphere",
             "Material - BrickWall Red Weathered"
         ],
+        "iterations": 50,
         "geometry": "geometry/sphere.obj",
         "material_file" :"BrickWall_Red_Weathered.mtlx",
         "material_path": "mtlx/BrickWall_Red_Weathered_4k_8b/"
@@ -490,6 +534,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Brass"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_brass_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -501,6 +546,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Carpaint"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_carpaint.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -512,6 +558,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Chrome"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_chrome.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -523,6 +570,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Copper"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_copper.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -534,6 +582,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Default"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_default.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -545,6 +594,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Glass"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_glass.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -556,6 +606,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Gold"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_gold.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -567,6 +618,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Greysphere"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_greysphere.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -578,6 +630,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Greysphere Calibration"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_greysphere_calibration.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -589,6 +642,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Jade"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_jade.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -600,6 +654,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Look Brass Tiled"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_look_brass_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -611,6 +666,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Look Wood Tiled"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_look_wood_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -622,6 +678,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Marble Solid"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_marble_solid.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -633,6 +690,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Metal Brushed"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_metal_brushed.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -644,6 +702,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Plastic"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_plastic.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -655,6 +714,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Thin Film"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_thin_film.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -666,6 +726,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Velvet"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_velvet.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -677,6 +738,7 @@
             "Geometry - Teapot",
             "Material - Standard Surface Wood Tiled"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"standard_surface_wood_tiled.mtlx",
         "material_path": "mtlx/StandardSurface/"
@@ -688,6 +750,7 @@
             "Geometry - Teapot",
             "Material - Cream Onyx"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"CreamOnyx.mtlx",
         "material_path": "mtlx/CreamOnyx_4k_8b/"
@@ -699,6 +762,7 @@
             "Geometry - Teapot",
             "Material - Carbon biColor Coat"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"Carbon_biColor_Coat.mtlx",
         "material_path": "mtlx/Carbon_biColor_Coat_4k_8b/"
@@ -710,6 +774,7 @@
             "Geometry - Teapot",
             "Material - CarPaint Single Color"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"CarPaint_SingleColor.mtlx",
         "material_path": "mtlx/CarPaint_SingleColor/"
@@ -721,6 +786,7 @@
             "Geometry - Teapot",
             "Material - BrickWall Red Weathered"
         ],
+        "iterations": 50,
         "geometry": "geometry/teapot.obj",
         "material_file" :"BrickWall_Red_Weathered.mtlx",
         "material_path": "mtlx/BrickWall_Red_Weathered_4k_8b/"
