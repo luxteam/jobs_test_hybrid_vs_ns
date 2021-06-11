@@ -162,7 +162,7 @@ def execute_tests(args, current_conf):
 
         while current_try < args.retries:
             try:
-                execution_script = "{tool} --plugin {plugin} --geometry {geometry} --material {material} --path {path} --output {output} --iterations {iterations}"
+                execution_script = "{tool} --plugin {plugin} --geometry {geometry} --material {material} --path {path} --output {output} --iterations {iterations} --flip_y 1"
 
                 image_output_path = os.path.abspath(os.path.join(args.output, "Color", case["case"] + case.get("extension", ".jpg")))
 
