@@ -80,6 +80,7 @@ def prepare_empty_reports(args, current_conf):
             test_case_report['iterations'] = int(case.get('iterations', 50))
             test_case_report['test_group'] = args.test_group
             test_case_report['tool'] = 'HybridVsNs'
+            test_case_report['render_log'] = ''
             test_case_report['date_time'] = datetime.now().strftime(
                 '%m/%d/%Y %H:%M:%S')
             if case['status'] == 'skipped':
@@ -250,7 +251,7 @@ def createArgsParser():
     parser.add_argument("--res_path", required=True)
     parser.add_argument("--test_cases", required=True)
     parser.add_argument("--retries", required=False, default=2, type=int)
-    parser.add_argument('--timeout', required=False, default=120)
+    parser.add_argument('--timeout', required=False, default=300)
     parser.add_argument('--plugin', required=True)
 
     return parser
