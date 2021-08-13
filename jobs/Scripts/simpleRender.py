@@ -223,6 +223,11 @@ def execute_tests(args, current_conf):
                                 if "error code" in out:
                                     raise Exception("Tool returned error code")
 
+                            if not os.path.exists(image_output_path):
+                                # Image not found - crash
+                                is_crash = True
+                                raise Exception("Output image not found")
+
                             status = "passed"
 
                             render_time = time.time() - start_time
