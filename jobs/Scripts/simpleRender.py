@@ -233,6 +233,8 @@ def execute_tests(args, current_conf):
                             render_time = time.time() - start_time
 
                             save_results(args, case, cases, "passed", render_time)
+
+                            break
                         except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as e:
                             crash_window = win32gui.FindWindow(None, "HybridVsNs.exe")
 
@@ -244,8 +246,6 @@ def execute_tests(args, current_conf):
 
                             if is_crash:
                                 raise Exception("Crash window found")
-                        else:
-                            break
 
                     break
                 except Exception as e:
