@@ -15,6 +15,7 @@ import copy
 import traceback
 import time
 import win32gui
+import win32con
 
 sys.path.append(os.path.abspath(os.path.join(
     os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
@@ -160,10 +161,6 @@ def save_results(args, case, cases, test_case_status, render_time, error_message
         json.dump(cases, file, indent=4)
 
 
-def crash_window_exists():
-    return win32gui.FindWindow(None, "HybridVsNorthstar.exe") != 0
-
-
 def execute_tests(args, current_conf):
     rc = 0
 
@@ -231,19 +228,26 @@ def execute_tests(args, current_conf):
                             render_time = time.time() - start_time
 
                             save_results(args, case, cases, "passed", render_time)
-                        except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
-                            if crash_window_exists:
+                        except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as e:
+                            crash_window = win32gui.FindWindow(None, "HybridVsNs.exe")
+
+                            while crash_window != 0:
+                                win32gui.PostMessage(crash_window, win32con.WM_CLOSE, 0, 0)
+
                                 is_crash = True
+                                crash_window = win32gui.FindWindow(None, "HybridVsNs.exe")
+
+                            if is_crash:
                                 raise Exception("Crash window found")
                         else:
                             break
-                except Exception as err:
-                    main_logger.error("Test case {} has been aborted due to error: {}".format(case["case"], err))
+                except Exception as e:
+                    main_logger.error("Test case {} has been aborted due to error: {}".format(case["case"], e))
                     for child in reversed(p.children(recursive=True)):
                         child.terminate()
                     p.terminate()
 
-                    raise err
+                    raise e
                 finally:
                     log_path = os.path.join(args.output, "render_tool_logs", case["case"] + ".log")
 
