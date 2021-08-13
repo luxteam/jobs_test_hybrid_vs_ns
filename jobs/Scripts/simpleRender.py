@@ -140,7 +140,7 @@ def save_results(args, case, cases, test_case_status, render_time, error_message
         test_case_report["number_of_tries"] += 1
         test_case_report["is_crash"] = is_crash
 
-        if test_case_status != "passed":
+        if test_case_status == "error":
             if is_crash:
                 copyfile(os.path.join(args.output, "Color", "crash.jpg"), 
                     os.path.join(args.output, "Color", case["case"] + ".jpg"))
@@ -175,7 +175,9 @@ def execute_tests(args, current_conf):
 
         is_crash = False
 
-        while current_try < args.retries:
+        case_finished = False
+
+        while current_try < args.retries and not case_finished:
             is_crash = False
 
             try:
@@ -196,8 +198,6 @@ def execute_tests(args, current_conf):
                 with open(execution_script_path, "w") as f:
                     f.write(execution_script)
 
-                status = "error"
-
                 p = psutil.Popen(execution_script_path, shell=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
@@ -215,26 +215,9 @@ def execute_tests(args, current_conf):
                     thread.start()
 
                 try:
-                    while True:
+                    while not case_finished:
                         try:
                             p.wait(timeout=5)
-
-                            for out in outs:
-                                if "error code" in out:
-                                    raise Exception("Tool returned error code")
-
-                            if not os.path.exists(image_output_path):
-                                # Image not found - crash
-                                is_crash = True
-                                raise Exception("Output image not found")
-
-                            status = "passed"
-
-                            render_time = time.time() - start_time
-
-                            save_results(args, case, cases, "passed", render_time)
-
-                            break
                         except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as e:
                             crash_window = win32gui.FindWindow(None, "HybridVsNs.exe")
 
@@ -246,8 +229,24 @@ def execute_tests(args, current_conf):
 
                             if is_crash:
                                 raise Exception("Crash window found")
+                        else:
+                            main_logger.info("Render of test case '{}' finished (try #{})".format(case["case"], current_try))
 
-                    break
+                            for out in outs:
+                                if "error code" in out:
+                                    raise Exception("Tool returned error code")
+
+                            if not os.path.exists(image_output_path):
+                                # Image not found - crash
+                                is_crash = True
+                                raise Exception("Output image not found")
+
+                            render_time = time.time() - start_time
+
+                            save_results(args, case, cases, "passed", render_time)
+
+                            case_finished = True
+
                 except Exception as e:
                     main_logger.error("Test case {} has been aborted due to error: {}".format(case["case"], e))
 
@@ -277,10 +276,13 @@ def execute_tests(args, current_conf):
                 main_logger.error("Traceback: {}".format(traceback.format_exc()))
             finally:
                 current_try += 1
-        else:
+
+        if not case_finished:
             main_logger.error("Failed to execute case '{}' at all".format(case["case"]))
             rc = -1
             save_results(args, case, cases, "error", -0.0, error_messages = error_messages, is_crash = is_crash)
+        else:
+            main_logger.info("Case '{}' finished. Try: {}".format(case["case"], current_try))
 
     return rc
 
