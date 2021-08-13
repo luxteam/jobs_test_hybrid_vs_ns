@@ -14,6 +14,7 @@ from threading import Thread
 import copy
 import traceback
 import time
+import win32gui
 
 sys.path.append(os.path.abspath(os.path.join(
     os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
@@ -56,6 +57,9 @@ def prepare_empty_reports(args, current_conf):
     copyfile(os.path.abspath(os.path.join(args.output, '..', '..', '..', '..', 'jobs_launcher',
                                           'common', 'img', 'error.jpg')), os.path.join(args.output, 'Color', 'failed.jpg'))
 
+    copyfile(os.path.abspath(os.path.join(args.output, '..', '..', '..', '..', 'jobs_launcher',
+                                          'common', 'img', 'crash.jpg')), os.path.join(args.output, 'Color', 'crash.jpg'))
+
     with open(os.path.join(os.path.abspath(args.output), "test_cases.json"), "r") as json_file:
         cases = json.load(json_file)
 
@@ -83,6 +87,7 @@ def prepare_empty_reports(args, current_conf):
             test_case_report['render_log'] = ''
             test_case_report['date_time'] = datetime.now().strftime(
                 '%m/%d/%Y %H:%M:%S')
+            test_case_report['is_crash'] = False
             if case['status'] == 'skipped':
                 test_case_report['test_status'] = 'skipped'
                 test_case_report['file_name'] = case['case'] + case.get('extension', '.jpg')
@@ -122,7 +127,7 @@ def read_output(pipe, functions):
     pipe.close()
 
 
-def save_results(args, case, cases, test_case_status, render_time, error_messages = []):
+def save_results(args, case, cases, test_case_status, render_time, error_messages = [], is_crash = False):
     with open(os.path.join(args.output, case["case"] + CASE_REPORT_SUFFIX), "r") as file:
         test_case_report = json.loads(file.read())[0]
         test_case_report["file_name"] = case["case"] + case.get("extension", '.jpg')
@@ -132,11 +137,17 @@ def save_results(args, case, cases, test_case_status, render_time, error_message
         test_case_report["render_log"] = os.path.join("render_tool_logs", case["case"] + ".log")
         test_case_report["testing_start"] = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
         test_case_report["number_of_tries"] += 1
+        test_case_report["is_crash"] = is_crash
 
         if test_case_status != "passed":
-            copyfile(os.path.join(args.output, "Color", "failed.jpg"), 
-                os.path.join(args.output, "Color", case["case"] + ".jpg"))
-            test_case_report["message"] = list(error_messages)
+            if is_crash:
+                copyfile(os.path.join(args.output, "Color", "crash.jpg"), 
+                    os.path.join(args.output, "Color", case["case"] + ".jpg"))
+                test_case_report["message"] = list(error_messages)
+            else:
+                copyfile(os.path.join(args.output, "Color", "failed.jpg"), 
+                    os.path.join(args.output, "Color", case["case"] + ".jpg"))
+                test_case_report["message"] = list(error_messages)
 
         if test_case_status == "passed" or test_case_status == "error":
             test_case_report["group_timeout_exceeded"] = False
@@ -147,6 +158,10 @@ def save_results(args, case, cases, test_case_status, render_time, error_message
     case["status"] = test_case_status
     with open(os.path.join(args.output, "test_cases.json"), "w") as file:
         json.dump(cases, file, indent=4)
+
+
+def crash_window_exists():
+    return win32gui.FindWindow(None, "HybridVsNorthstar.exe") != 0
 
 
 def execute_tests(args, current_conf):
@@ -161,7 +176,11 @@ def execute_tests(args, current_conf):
 
         error_messages = set()
 
+        is_crash = False
+
         while current_try < args.retries:
+            is_crash = False
+
             try:
                 execution_script = "{tool} --plugin {plugin} --geometry {geometry} --material {material} --path {path} --output {output} --iterations {iterations} --flip_y 1"
 
@@ -199,22 +218,32 @@ def execute_tests(args, current_conf):
                     thread.start()
 
                 try:
-                    p.wait(timeout=args.timeout)
+                    while True:
+                        try:
+                            p.wait(timeout=5)
 
-                    for out in outs:
-                        if "error code" in out:
-                            raise Exception("Tool returned error code")
+                            for out in outs:
+                                if "error code" in out:
+                                    raise Exception("Tool returned error code")
 
-                    status = "passed"
+                            status = "passed"
 
-                    render_time = time.time() - start_time
+                            render_time = time.time() - start_time
 
-                    save_results(args, case, cases, "passed", render_time)
-                except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
-                    main_logger.error("Test case {} has been aborted by timeout".format(case["case"]))
+                            save_results(args, case, cases, "passed", render_time)
+                        except (psutil.TimeoutExpired, subprocess.TimeoutExpired) as err:
+                            if crash_window_exists:
+                                is_crash = True
+                                raise Exception("Crash window found")
+                        else:
+                            break
+                except Exception as err:
+                    main_logger.error("Test case {} has been aborted due to error: {}".format(case["case"], err))
                     for child in reversed(p.children(recursive=True)):
                         child.terminate()
                     p.terminate()
+
+                    raise err
                 finally:
                     log_path = os.path.join(args.output, "render_tool_logs", case["case"] + ".log")
 
@@ -228,7 +257,7 @@ def execute_tests(args, current_conf):
 
                 break
             except Exception as e:
-                save_results(args, case, cases, "failed", -0.0, error_messages = error_messages)
+                save_results(args, case, cases, "failed", -0.0, error_messages = error_messages, is_crash = is_crash)
                 error_messages.add(str(e))
                 main_logger.error("Failed to execute test case (try #{}): {}".format(current_try, str(e)))
                 main_logger.error("Traceback: {}".format(traceback.format_exc()))
@@ -237,7 +266,7 @@ def execute_tests(args, current_conf):
         else:
             main_logger.error("Failed to execute case '{}' at all".format(case["case"]))
             rc = -1
-            save_results(args, case, cases, "error", -0.0, error_messages = error_messages)
+            save_results(args, case, cases, "error", -0.0, error_messages = error_messages, is_crash = is_crash)
 
     return rc
 
