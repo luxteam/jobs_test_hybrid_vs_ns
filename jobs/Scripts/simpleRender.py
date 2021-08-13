@@ -250,9 +250,13 @@ def execute_tests(args, current_conf):
                     break
                 except Exception as e:
                     main_logger.error("Test case {} has been aborted due to error: {}".format(case["case"], e))
-                    for child in reversed(p.children(recursive=True)):
-                        child.terminate()
-                    p.terminate()
+
+                    try:
+                        for child in reversed(p.children(recursive=True)):
+                            child.terminate()
+                        p.terminate()
+                    except Exception as e1:
+                        main_logger.error("Failed to terminate running process: {}".format(e1))
 
                     raise e
                 finally:
