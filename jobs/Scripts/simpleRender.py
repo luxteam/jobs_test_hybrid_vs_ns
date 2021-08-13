@@ -246,6 +246,8 @@ def execute_tests(args, current_conf):
                                 raise Exception("Crash window found")
                         else:
                             break
+
+                    break
                 except Exception as e:
                     main_logger.error("Test case {} has been aborted due to error: {}".format(case["case"], e))
                     for child in reversed(p.children(recursive=True)):
@@ -264,7 +266,6 @@ def execute_tests(args, current_conf):
                         file.write(outs)
                         file.write(errs)
 
-                break
             except Exception as e:
                 save_results(args, case, cases, "failed", -0.0, error_messages = error_messages, is_crash = is_crash)
                 error_messages.add(str(e))
