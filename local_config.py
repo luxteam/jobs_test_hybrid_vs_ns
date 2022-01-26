@@ -1,5 +1,7 @@
-tool_name = 'hybrid_vs_ns'
+tool_name = 'HybridVsNs'
 report_type = 'default'
-show_skipped_groups = True
-tracked_metrics = {}
-tracked_metrics_files_number = 10
+show_sync_time = False
+target_configuration = 'Northstar64'
+images_diff_threshold = 1000
+compare_images = True
+compare_time = False
