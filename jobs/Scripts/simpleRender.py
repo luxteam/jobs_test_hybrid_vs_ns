@@ -71,6 +71,8 @@ def prepare_empty_reports(args, current_conf):
         if case['status'] != 'done' and case['status'] != 'error':
             if case["status"] == 'inprogress':
                 case['status'] = 'active'
+            elif case["status"] == 'inprogress_observed':
+                case['status'] = 'active_observed'
 
             test_case_report = RENDER_REPORT_BASE.copy()
             test_case_report['test_case'] = case['case']
@@ -150,7 +152,7 @@ def save_results(args, case, cases, test_case_status, render_time, error_message
                     os.path.join(args.output, "Color", case["case"] + ".jpg"))
                 test_case_report["message"] = list(error_messages)
 
-        if test_case_status == "passed" or test_case_status == "error":
+        if test_case_status == "passed" or test_case_status == "error" or test_case_status == "observed":
             test_case_report["group_timeout_exceeded"] = False
 
     with open(os.path.join(args.output, case["case"] + CASE_REPORT_SUFFIX), "w") as file:
@@ -243,7 +245,10 @@ def execute_tests(args, current_conf):
 
                             render_time = time.time() - start_time
 
-                            save_results(args, case, cases, "passed", render_time)
+                            if case["status"] == "active":
+                                save_results(args, case, cases, "passed", render_time)
+                            else:
+                                save_results(args, case, cases, "observed", render_time)
 
                             case_finished = True
 
