@@ -72,7 +72,7 @@ def prepare_empty_reports(args, current_conf):
             if case["status"] == 'inprogress':
                 case['status'] = 'active'
             elif case["status"] == 'inprogress_observed':
-                case['status'] = 'active_observed'
+                case['status'] = 'observed'
 
             test_case_report = RENDER_REPORT_BASE.copy()
             test_case_report['test_case'] = case['case']
